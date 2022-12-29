@@ -145,7 +145,10 @@ jobs:
       - name: Run tests
         run: oca_run_tests
       {%- if github_enable_codecov %}
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v2
+        with:
+          token: {{ "${{" }} secrets.CODECOV_TOKEN {{ "}}" }}
+          fail_ci_if_error: true # optional (default = false)
       {%- endif %}
       {% raw -%}
       - name: Update .pot files
