@@ -130,6 +130,8 @@ jobs:
           persist-credentials: false
       - name: Install addons and dependencies
         run: oca_install_addons
+        env:
+          GIT_TOKEN: {{ "${{" }} secrets.GIT_TOKEN {{ "}}" }}
       - name: Check licenses
         run: manifestoo -d . check-licenses
         {%- if not github_check_license %}
