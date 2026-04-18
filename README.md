@@ -26,7 +26,7 @@ pipx install copier
 pipx install pre-commit
 pipx ensurepath
 # Clone this template and answer its questions
-copier copy --UNSAFE https://github.com/OCA/oca-addons-repo-template.git some-repo
+copier copy https://github.com/OCA/oca-addons-repo-template.git some-repo
 # Commit that
 cd some-repo
 git add .
@@ -40,7 +40,7 @@ Quick answer to update a repo:
 ```bash
 # Update the repo
 cd some-repo
-copier update --UNSAFE
+copier update
 # Reformat updated files
 pre-commit run
 # Commit update
@@ -65,6 +65,7 @@ This template allows to bootstrap and update addon repositories for these Odoo v
 - 16.0
 - 17.0
 - 18.0
+- 19.0
 
 Future versions will be added as they are released. Past versions could be added as long
 as they don't break existing branches.
